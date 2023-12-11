@@ -9,13 +9,14 @@ const server = createServer(app)
 const dataUsers = [];
 
 app.get('/', (req, res) => {
-    const filePath = path.join(process.cwd(), 'public','index.html')
+    const filePath = path.join(process.cwd(),'public','index.html')
     res.sendFile(filePath)
 })
 // Servir archivos estáticos desde el directorio 'public'
-app.use(express.static('public'));
+app.use(express.static('public'))
 // Configurar middleware para parsear datos JSON
 app.use(bodyParser.json())
+
 
 // Manejar la solicitud POST desde el cliente
 app.post('/', (req, res) => {
@@ -25,7 +26,7 @@ app.post('/', (req, res) => {
     // Hacer algo con los datos
     console.log("Datos recibidos del cliente:", datos)
     //Enviar respuesta al cliente
-    res.json({mensaje: `Bienvenidos al servidor ${dataUsers[0].nombre} y ${dataUsers[1].nombre}!!!`})
+    res.json({mensaje: `Bienvenido al servidor ${dataUsers[0].nombre} ${dataUsers[0].apellido}!!!`})
 });
 
 
