@@ -4,7 +4,7 @@ import bodyParser from 'body-parser';
 import http, { createServer } from 'node:http'
 
 const app = express();
-const port = 3000;
+const port = 5000;
 const server = createServer(app)
 const dataUsers = [];
 
@@ -26,7 +26,7 @@ app.post('/', (req, res) => {
     // Hacer algo con los datos
     console.log("Datos recibidos del cliente:", datos)
     //Enviar respuesta al cliente
-    res.json({mensaje: `Bienvenido al servidor ${dataUsers[0].userName}!!!
+    res.json({mensaje: `Bienvenido al servidor ${dataUsers[0].user}!!!
     No te olvides de tu correo: ${dataUsers[0].correo}
     Y de la contraseña ${dataUsers[0].password} menos aún
     `})

@@ -24,7 +24,7 @@ const datos1 = {
 }
 
 function enviarData(datosAEnviar) {
-    fetch("http://localhost:3000/", {
+    fetch("http://localhost:5000/", {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
