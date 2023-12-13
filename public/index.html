@@ -2,14 +2,19 @@
 <html>
     <head>
         <title>Node Server</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <h1>Bienvenido a Node Server</h1>
-        <form>
-            <input type="text" placeholder="Introduce tu nombre" class="data">
-            <input type="text" placeholder="Introduce tu apellido" class="dataApellido">
-            <input type="button" value="Enviar" class="dataEnviada">
-        </form>
+        <div class="formulario">
+            <form>
+                <input type="text" placeholder="Gmail" class="email">
+                <input type="text" placeholder="User name" class="userName">
+                <input type="password" placeholder="Contraseña" class="passwd">
+                <button class="dataEnviada">Enviar</button>
+            </form>
+        </div>
+
         <p id="mensaje"></p>
         <script src="main.js"></script>
     </body>

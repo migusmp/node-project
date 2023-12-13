@@ -22,11 +22,14 @@ app.use(bodyParser.json())
 app.post('/', (req, res) => {
     const datos = req.body;
     dataUsers.push(datos);
-    console.log("Usuarios registrados:", dataUsers)
+    console.log("Datos de usuarios registrados:", dataUsers)
     // Hacer algo con los datos
     console.log("Datos recibidos del cliente:", datos)
     //Enviar respuesta al cliente
-    res.json({mensaje: `Bienvenido al servidor ${dataUsers[0].nombre} ${dataUsers[0].apellido}!!!`})
+    res.json({mensaje: `Bienvenido al servidor ${dataUsers[0].userName}!!!
+    No te olvides de tu correo: ${dataUsers[0].correo}
+    Y de la contraseña ${dataUsers[0].password} menos aún
+    `})
 });
 
 

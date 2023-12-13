@@ -1,19 +1,15 @@
-const inputNombre = document.querySelector(".data");
-const inputApellido = document.querySelector(".dataApellido")
+const userName = document.querySelector(".userName");
+const email = document.querySelector(".email");
+const passwd = document.querySelector(".passwd");
+
 const button = document.querySelector(".dataEnviada");
 const data = {}
-const obtenerData = (input, input2) => {
-    
-    
-    console.log(data)
-   
-}
+
 
 button.addEventListener("click", () => {
-    const data = {
-        nombre: inputNombre.value,
-        apellido: inputApellido.value
-    }
+    data.correo = email.value
+    data.user = userName.value
+    data.password = passwd.value
     enviarData(data);
 })
 
@@ -45,4 +41,5 @@ function enviarData(datosAEnviar) {
             console.log("Error al enviar solicitud:", error)
         })
 }
+
 
