@@ -14,9 +14,16 @@ button.addEventListener("click", () => {
     email.value = "";
     userName.value = "";
     passwd.value = "";
+    getData();
+    setTimeout(() => {
+        searchUser(dataUsers, "migus") 
+    },2000)
+    
 })
 
 const infoServer = [];
+const dataUsers = [];
+
 const datos = {
     nombre: 'Miguel Angel',
     id: 1
@@ -45,4 +52,19 @@ function enviarData(datosAEnviar) {
         })
 }
 
+function getData(){
+    fetch('http://localhost:5000/usuarios')
+    .then(res => res.json())
+    .then(data => {
+        console.log("Información del usuario:", data)
+        dataUsers.push(data);
+    })
+    .catch(err => console.log("Error al obtener información del usuario", err))
+}
+// funcion para encontrar un usuario 
+function searchUser(arrUsuarios, nameUser){
+    const usuarioEncontrado = arrUsuarios[0].datosUsuarios.user.includes(nameUser)
+    //const usuarioEncontrado = arrUsuarios.find(usuario => usuario.arrUsuarios.datosUsuarios.user === nameUser)
+    console.log(usuarioEncontrado);
+}
 
