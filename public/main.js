@@ -11,6 +11,9 @@ button.addEventListener("click", () => {
     data.user = userName.value
     data.password = passwd.value
     enviarData(data);
+    email.value = "";
+    userName.value = "";
+    passwd.value = "";
 })
 
 const infoServer = [];

@@ -26,9 +26,9 @@ app.post('/', (req, res) => {
     // Hacer algo con los datos
     console.log("Datos recibidos del cliente:", datos)
     //Enviar respuesta al cliente
-    res.json({mensaje: `Bienvenido al servidor ${dataUsers[0].user}!!!
-    No te olvides de tu correo: ${dataUsers[0].correo}
-    Y de la contraseña ${dataUsers[0].password} menos aún
+    res.json({mensaje: `Bienvenido al servidor ${datos.user}!!!
+    No te olvides de tu correo: ${datos.correo}
+    Y de la contraseña ${datos.password} menos aún
     `})
 });
 
